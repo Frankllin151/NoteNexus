@@ -20,22 +20,27 @@
     <div id="anotardiv" class="text-yellow">
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-        @foreach ($capitulos as $item)
-            @if (trim($item) !== '')
-                <div class="bg-slate-300 rounded-sm shadow-md p-4">
-                    <a href="{{route('trechos', ['trecho' => $item]) }}" class="text-lg font-semibold mb-2">{{$item}}</a>
-                    <div class="flex flex-col sm:flex-row justify-center sm:justify-start space-y-2 sm:space-y-0 sm:space-x-2 mt-4">
-                        <form action="{{ route('deletarCapitulo', ['id' => $item]) }}" method="POST" style="display: inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="bg-red-400 hover:bg-red-500 py-2 px-4 text-white rounded-md w-full sm:w-auto">Excluir</button>
-                        </form> 
-                        <button data-key="{{$item}}" class="bg-indigo-400 hover:bg-indigo-500 py-2 px-4 text-white rounded-md w-full sm:w-auto">Editar</button>
-                        <a href="{{route('trechos', ['trecho' => $item]) }}" class="bg-indigo-400 hover:bg-indigo-500 py-2 px-4 text-white rounded-md">Anotações</a>
+        @if ($nomesLivros->isEmpty())
+            <p class="col-span-1 sm:col-span-2 lg:col-span-3 text-center text-red-500">Não há nenhuma anotação para este usuário.</p>
+        @else
+            @foreach ($nomesLivros as $item)
+                @if (trim($item) !== '')
+                    <div class="bg-slate-300 rounded-sm shadow-md p-4">
+                        <h4 class="text-lg font-semibold mb-2">
+                            <a href="{{ route('capitulo', ['capitulo' => $item]) }}">{{ $item }}</a>
+                        </h4>
+                        <div class="flex flex-col sm:flex-row justify-center sm:justify-start space-y-2 sm:space-y-0 sm:space-x-2 mt-4">
+                            <a href="{{ route('capitulo', ['capitulo' => $item]) }}" class="bg-indigo-400 hover:bg-indigo-500 py-2 px-4 text-white rounded-md">Capitulos</a>
+                            <button class="bg-indigo-400 hover:bg-indigo-500 py-2 px-4 text-white rounded-md" data-key="{{ $item }}">Editar</button>
+                            <a href="{{ route('gerapdf', ['nomelivro' => $item]) }}" class="bg-indigo-400 hover:bg-indigo-500 py-2 px-4 text-white rounded-md">PDF</a>
+                           
+                                <button id="{{$item}}" class=" btnDelete bg-red-400 hover:bg-red-500 py-2 px-4 text-white rounded-md">Excluir</button>
+                           
+                        </div>
                     </div>
-                </div>
-            @endif
-        @endforeach
+                @endif
+            @endforeach
+        @endif
     </div>
     
 </div>
@@ -65,7 +70,20 @@
 
 
 
-
+<div id="deleteModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden items-center justify-center">
+    <!-- Modal Content -->
+    <div class="bg-white p-6 rounded shadow-lg w-1/3">
+        <h2 class="text-xl font-bold mb-4">Excluir Capitulo</h2>
+        <p class="mb-4">Tem certeza de que deseja excluir este capitulo?</p>
+        <form id="deleteForm" method="POST">
+            @csrf
+            @method('DELETE')
+            <div class="flex justify-end">
+                <button type="button" id="closeDeleteModal" class="bg-gray-500 text-white p-2 rounded mr-2">Cancelar</button>
+                <button type="submit" class="bg-red-600 text-white p-2 rounded">Excluir</button>
+            </div>
+        </form>
+    </div>
 
 <script>
   
@@ -124,4 +142,39 @@ const openModalBtn = document.getElementById('openModalBtn');
         modal.classList.remove("flex")
     });
 
+
+
+
+
+
+/// modal excluir 
+   
+document.addEventListener('DOMContentLoaded', function () {
+    const deleteButtons = document.querySelectorAll('.btnDelete');
+    const deleteModal = document.getElementById('deleteModal');
+    const closeDeleteModalButton = document.getElementById('closeDeleteModal');
+    const deleteForm = document.getElementById('deleteForm');
+
+    deleteButtons.forEach(deletebtn => {
+        deletebtn.addEventListener('click', function (event) {
+            const bookId = event.target.id.replace('buttonexcluir-', '');
+           
+             deleteForm.action = `/dashboard/deletarcapitulo/${bookId}`;
+            deleteModal.classList.remove('hidden');
+            deleteModal.classList.add('flex');
+        });
+    });
+
+    closeDeleteModalButton.addEventListener('click', function () {
+        deleteModal.classList.add('hidden');
+        deleteModal.classList.remove('flex');
+    });
+
+    window.addEventListener('click', function (event) {
+        if (event.target == deleteModal) {
+            deleteModal.classList.add('hidden');
+            deleteModal.classList.remove('flex');
+        }
+    });
+});
 </script>

@@ -19,7 +19,7 @@ Route::middleware('auth')->group(function () {
    
     Route::post("/dashboard/adicionarlivro" , 
     [AnotarLivroController::class , "AdicionarNomeLivro"])->name("adicionarlivro");
-    Route::delete("/dashbaord/deletar{id?}" , [AnotarLivroController::class, "DeletarAnotar"])
+    Route::delete("/dashboard/deletar{id?}" , [AnotarLivroController::class, "DeletarAnotar"])
     ->name("deletar");
     Route::put("/dashboard/editarlivro/{editarlivro?}" , [AnotarLivroController::class, "editarLivro"])
     ->name("eiditarlivro");

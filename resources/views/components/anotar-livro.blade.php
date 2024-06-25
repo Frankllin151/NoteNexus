@@ -32,12 +32,8 @@
                         <button class="bg-indigo-400 hover:bg-indigo-500 py-2 px-4 text-white rounded-md" data-key="{{$item}}">Editar</button>
                         <a href="{{ route('gerapdf', ["nomelivro" => $item]) }}" class="bg-indigo-400 hover:bg-indigo-500 
                             py-2 px-4 text-white rounded-md">PDF</a>
-                        <form action="{{ route('deletar', ['id' => $item]) }}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button class="bg-red-400 hover:bg-red-500 py-2 px-4 text-white rounded-md">Excluir</button>
-                        </form>
-                      
+                       
+                      <button class="btnDelete bg-red-400 hover:bg-red-500 py-2 px-4 text-white rounded-md" id="{{$item}}">Excluir</button>
                     </div>
                 </div>
                
@@ -69,17 +65,28 @@
     </div>
 </div>
 
+
+<!---modal click excluir-->
+
+<div id="deleteModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden items-center justify-center">
+    <!-- Modal Content -->
+    <div class="bg-white p-6 rounded shadow-lg w-1/3">
+        <h2 class="text-xl font-bold mb-4">Excluir Livro</h2>
+        <p class="mb-4">Tem certeza de que deseja excluir este livro?</p>
+        <form id="deleteForm" method="POST">
+            @csrf
+            @method('DELETE')
+            <div class="flex justify-end">
+                <button type="button" id="closeDeleteModal" class="bg-gray-500 text-white p-2 rounded mr-2">Cancelar</button>
+                <button type="submit" class="bg-red-600 text-white p-2 rounded">Excluir</button>
+            </div>
+        </form>
+    </div>
+
+
+
 <script>
-    // Obtém a referência do input e da div
-    const bookInput = document.getElementById('bookInput');
-    const displayDiv = document.getElementById('displayDiv');
-
-    // Adiciona um event listener para o evento de input
-    bookInput.addEventListener('input', function() {
-        // Atualiza o conteúdo da div com o valor do input
-        displayDiv.textContent = bookInput.value;
-    });
-
+  
 
     /// click modal 
 
@@ -131,7 +138,35 @@
         modalBook.classList.remove("flex");
     });
 
+ /// modal excluir 
+   
+ document.addEventListener('DOMContentLoaded', function () {
+    const deleteButtons = document.querySelectorAll('.btnDelete');
+    const deleteModal = document.getElementById('deleteModal');
+    const closeDeleteModalButton = document.getElementById('closeDeleteModal');
+    const deleteForm = document.getElementById('deleteForm');
 
+    deleteButtons.forEach(deletebtn => {
+        deletebtn.addEventListener('click', function (event) {
+            const bookId = event.target.id.replace('buttonexcluir-', '');
+           
+             deleteForm.action = `/dashboard/deletar${bookId}`;
+            deleteModal.classList.remove('hidden');
+            deleteModal.classList.add('flex');
+        });
+    });
 
+    closeDeleteModalButton.addEventListener('click', function () {
+        deleteModal.classList.add('hidden');
+        deleteModal.classList.remove('flex');
+    });
+
+    window.addEventListener('click', function (event) {
+        if (event.target == deleteModal) {
+            deleteModal.classList.add('hidden');
+            deleteModal.classList.remove('flex');
+        }
+    });
+});
 
 </script>

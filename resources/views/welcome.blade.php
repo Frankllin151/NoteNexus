@@ -35,9 +35,10 @@
             </div>
             <div class="block lg:hidden">
                 <button id="menu-button" class="focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                      </svg>
+                      
                 </button>
             </div>
             <div id="auth-buttons-desktop" class=" repsoivenav  space-x-4">
@@ -78,37 +79,60 @@
         </section>
         <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                <img src="https://via.placeholder.com/100" alt="Edição em Tempo Real" class="mx-auto mb-4">
+                
+                <svg  class="mx-auto mb-4 w-24 h-24 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                  </svg>
+                  
+              
                 <h3 class="text-xl font-bold mb-2">Edição em Tempo Real</h3>
                 <p class="text-gray-700">Colabore com sua equipe, mesmo à distância, sem perder a sincronia.</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                <img src="https://via.placeholder.com/100" alt="Organização Detalhada" class="mx-auto mb-4">
+                <svg class="mx-auto mb-4 w-24 h-24 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" />
+                  </svg>
+                  
                 <h3 class="text-xl font-bold mb-2">Organização Detalhada</h3>
                 <p class="text-gray-700">Estruture suas anotações de forma hierárquica, facilitando o acesso a informações importantes.</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                <img src="https://via.placeholder.com/100" alt="Compatibilidade Multi-plataforma" class="mx-auto mb-4">
+                <svg class="mx-auto mb-4 w-24 h-24 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m20.893 13.393-1.135-1.135a2.252 2.252 0 0 1-.421-.585l-1.08-2.16a.414.414 0 0 0-.663-.107.827.827 0 0 1-.812.21l-1.273-.363a.89.89 0 0 0-.738 1.595l.587.39c.59.395.674 1.23.172 1.732l-.2.2c-.212.212-.33.498-.33.796v.41c0 .409-.11.809-.32 1.158l-1.315 2.191a2.11 2.11 0 0 1-1.81 1.025 1.055 1.055 0 0 1-1.055-1.055v-1.172c0-.92-.56-1.747-1.414-2.089l-.655-.261a2.25 2.25 0 0 1-1.383-2.46l.007-.042a2.25 2.25 0 0 1 .29-.787l.09-.15a2.25 2.25 0 0 1 2.37-1.048l1.178.236a1.125 1.125 0 0 0 1.302-.795l.208-.73a1.125 1.125 0 0 0-.578-1.315l-.665-.332-.091.091a2.25 2.25 0 0 1-1.591.659h-.18c-.249 0-.487.1-.662.274a.931.931 0 0 1-1.458-1.137l1.411-2.353a2.25 2.25 0 0 0 .286-.76m11.928 9.869A9 9 0 0 0 8.965 3.525m11.928 9.868A9 9 0 1 1 8.965 3.525" />
+                  </svg>
+                  
                 <h3 class="text-xl font-bold mb-2">Compatibilidade Multi-plataforma</h3>
                 <p class="text-gray-700">Acesse suas anotações de qualquer dispositivo, a qualquer momento.</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                <img src="https://via.placeholder.com/100" alt="Sincronização Automática" class="mx-auto mb-4">
+                <svg class="mx-auto mb-4 w-24 h-24 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3-3 3" />
+                  </svg>
+                  
                 <h3 class="text-xl font-bold mb-2">Sincronização Automática</h3>
                 <p class="text-gray-700">Suas alterações são salvas e sincronizadas automaticamente entre todos os seus dispositivos.</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                <img src="https://via.placeholder.com/100" alt="Histórico Completo de Mudanças" class="mx-auto mb-4">
+                <svg class="mx-auto mb-4 w-24 h-24 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                  </svg>
+                  
                 <h3 class="text-xl font-bold mb-2">Histórico Completo de Mudanças</h3>
                 <p class="text-gray-700">Nunca perca uma versão importante das suas anotações com o nosso sistema de histórico detalhado.</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                <img src="https://via.placeholder.com/100" alt="Pesquisa de Texto Completo" class="mx-auto mb-4">
+                <svg  class="mx-auto mb-4 text-indigo-600 w-24 h-24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m15.75 15.75-2.489-2.489m0 0a3.375 3.375 0 1 0-4.773-4.773 3.375 3.375 0 0 0 4.774 4.774ZM21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                  </svg>
+                  
                 <h3 class="text-xl font-bold mb-2">Pesquisa de Texto Completo</h3>
                 <p class="text-gray-700">Encontre rapidamente qualquer informação nas suas anotações com a pesquisa inteligente.</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                <img src="https://via.placeholder.com/100" alt="Modelos Prontos para Uso" class="mx-auto mb-4">
+                <svg class="mx-auto mb-4 text-indigo-600 w-24 h-24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+                  </svg>
+                  
                 <h3 class="text-xl font-bold mb-2">Modelos Prontos para Uso</h3>
                 <p class="text-gray-700">Utilize nossos modelos para começar rapidamente e se inspirar na criação de novos documentos.</p>
             </div>
