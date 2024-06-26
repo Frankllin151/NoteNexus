@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
     ->name("editarCapitulo");
 
     //trecho
-    Route::get("/dashboard/trecho/{trecho?}" , [TrechoController::class , "Trecho"])
+    Route::get("/dashboard/trecho/{trecho}" , [TrechoController::class , "Trecho"])
     ->name("trechos");
     Route::post('trechoadd', [TrechoController::class , "trechoAdd"])->name("trechoadd");
    Route::delete("deletartrecho/{id?}", [TrechoController::class, "excluirid"])

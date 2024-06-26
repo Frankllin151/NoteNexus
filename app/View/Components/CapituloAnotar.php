@@ -31,7 +31,7 @@ class CapituloAnotar extends Component
         // Obter o ID do livro (parent_id) com base no nomelivro para o usuário autenticado
         $nomelivro = AnotarLivros::where('user_id', $user_id)->where("nomelivro" , $this->capitulo )->pluck('id')->first();
         $capitulos = AnotarLivros::where('user_id', $user_id)->where("parent_id" , $nomelivro)->pluck("capitulo");
-       
+    
         return view('components.capitulo-anotar' ,compact("capitulos") );
     }
 }

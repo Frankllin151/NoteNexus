@@ -10,6 +10,7 @@ class TrechoController extends Controller
 
     public function Trecho(Request $request , $trecho)
  {
+
   $id = AnotarLivros::where("user_id", auth()->id())->where("capitulo", $trecho)->pluck("id");
 
       $trechos = AnotarLivros::where("user_id", auth()->id())->where("parent_id", $id[0])->pluck("trecho");

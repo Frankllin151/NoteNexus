@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>NoteNexus</title>
 
         <!-- Fonts -->
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -167,7 +167,9 @@
                         @endauth
                     </nav>
                 @endif
-       
+                <br>
+            
+          <span class="text-sm text-black">Entre em contato: frankllinszcontato@gmail.com</span>
         </footer>
     </main>
 

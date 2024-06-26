@@ -20,19 +20,19 @@
     <div id="anotardiv" class="text-yellow">
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-        @if ($nomesLivros->isEmpty())
+        @if ($capitulos->isEmpty())
             <p class="col-span-1 sm:col-span-2 lg:col-span-3 text-center text-red-500">Não há nenhuma anotação para este usuário.</p>
         @else
-            @foreach ($nomesLivros as $item)
+            @foreach ($capitulos as $item)
                 @if (trim($item) !== '')
-                    <div class="bg-slate-300 rounded-sm shadow-md p-4">
-                        <h4 class="text-lg font-semibold mb-2">
+                    <div class="bg-indigo-700 rounded-sm shadow-md p-4">
+                        <h4 class="text-lg text-white font-semibold mb-2">
                             <a href="{{ route('capitulo', ['capitulo' => $item]) }}">{{ $item }}</a>
                         </h4>
                         <div class="flex flex-col sm:flex-row justify-center sm:justify-start space-y-2 sm:space-y-0 sm:space-x-2 mt-4">
-                            <a href="{{ route('capitulo', ['capitulo' => $item]) }}" class="bg-indigo-400 hover:bg-indigo-500 py-2 px-4 text-white rounded-md">Capitulos</a>
-                            <button class="bg-indigo-400 hover:bg-indigo-500 py-2 px-4 text-white rounded-md" data-key="{{ $item }}">Editar</button>
-                            <a href="{{ route('gerapdf', ['nomelivro' => $item]) }}" class="bg-indigo-400 hover:bg-indigo-500 py-2 px-4 text-white rounded-md">PDF</a>
+                            <a href="{{ route('trechos', ['trecho' => $item]) }}" class="bg-indigo-400 hover:bg-indigo-500 py-2 px-4 text-white rounded-md">Anotaçoes</a>
+                            <button class="bg-yellow-500 hover:bg-yellow-600 py-2 px-4 text-white rounded-md" data-key="{{ $item }}">Editar</button>
+                           
                            
                                 <button id="{{$item}}" class=" btnDelete bg-red-400 hover:bg-red-500 py-2 px-4 text-white rounded-md">Excluir</button>
                            
@@ -62,7 +62,7 @@
             </div>
             <div class="flex justify-end">
                 <button type="button" id="closeModal" class="bg-gray-500 text-white p-2 rounded mr-2">Cancelar</button>
-                <button type="submit" class="bg-indigo-600 text-black p-2 rounded">Salvar</button>
+                <button type="submit" class="bg-indigo-600 text-white p-2 rounded">Salvar</button>
             </div>
         </form>
     </div>
